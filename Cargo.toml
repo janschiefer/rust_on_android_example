@@ -1,3 +1,5 @@
+
+
 [package]
 name = "rust_on_android_example"
 version = "0.1.0"
@@ -38,8 +40,8 @@ keystore_password = "test123"
 # Defaults to a `min_sdk_version` of 23 and `target_sdk_version` of 30 (or lower if the detected NDK doesn't support this).
 [package.metadata.android.sdk]
 min_sdk_version = 23
-target_sdk_version = 30
-max_sdk_version = 29
+target_sdk_version = 33
+#max_sdk_version = 29
 
 # Folder containing extra shared libraries intended to be dynamically loaded at runtime.
 # Files matching `libs_folder/${android_abi}/*.so` are added to the apk
@@ -50,8 +52,7 @@ max_sdk_version = 29
 
 [target.'cfg(target_os = "android")'.dependencies]
 ndk-glue = "^0.7.0"
-jni = { version = "0.19", default-features = false }
-
+jni = { version = "^0.19", default-features = false }
 
 [profile.release]
 lto = true
